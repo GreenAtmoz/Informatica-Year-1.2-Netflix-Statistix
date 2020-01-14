@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="781.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane prefHeight="536.0" prefWidth="129.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@netflixLogo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="4.0" layoutY="136.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Accounts" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="193.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Series" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="253.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Film" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: Black;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
+      <TableView layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
