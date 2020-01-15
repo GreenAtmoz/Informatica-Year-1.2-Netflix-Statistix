@@ -5,7 +5,7 @@ public class DatabaseConnection {
 
     public static void connection(){
 
-        String connectionUrl = "jdbc:sqlserver://LenovoIdeapadL340RubenvdRande;databaseName=Bibliotheek;user=netflix;password=#PhJbh2H;";
+        String connectionUrl = "jdbc:sqlserver://LenovoIdeapadL340RubenvdRande;databaseName=NetflixStatistixDatabase;user=netflix;password=#PhJbh2H;";
 
         // Connection beheert informatie over de connectie met de database.
         Connection con = null;
@@ -24,7 +24,7 @@ public class DatabaseConnection {
             con = DriverManager.getConnection(connectionUrl);
 
             // Stel een SQL query samen.
-            String SQL = "SELECT TOP 10 * FROM Boek";
+            String SQL = "SELECT Email, Land, Provincie FROM Account";
             stmt = con.createStatement();
             // Voer de query uit op de database.
             rs = stmt.executeQuery(SQL);
@@ -34,16 +34,16 @@ public class DatabaseConnection {
             // Als de resultset waarden bevat dan lopen we hier door deze waarden en printen ze.
             while (rs.next()) {
                 // Vraag per row de kolommen in die row op.
-                int ISBN = rs.getInt("ISBN");
-                String title = rs.getString("Titel");
-                String author = rs.getString("Auteur");
+                String Email = rs.getString("Email");
+                String Land = rs.getString("Land");
+                String Provincie = rs.getString("Provincie");
 
                 // Print de kolomwaarden.
                 // System.out.println(ISBN + " " + title + " " + author);
 
                 // Met 'format' kun je de string die je print het juiste formaat geven, als je dat wilt.
                 // %d = decimal, %s = string, %-32s = string, links uitgelijnd, 32 characters breed.
-                System.out.format("| %7d | %-32s | %-24s | \n", ISBN, title, author);
+                System.out.format("| %7d | %-32s | %-24s | \n", Email, Land, Provincie);
             }
             System.out.println(String.format("| %7s | %-32s | %-24s |\n", " ", " ", " ").replace(" ", "-"));
 
