@@ -9,19 +9,19 @@ public class Account {
     private final SimpleStringProperty Provincie;
     private final SimpleStringProperty Plaats;
     private final SimpleStringProperty Straat;
-    private final SimpleStringProperty Adres;
+    private final SimpleStringProperty Huisnummer;
     private final SimpleStringProperty Toevoeging;
     private final SimpleStringProperty Postcode;
 
     public Account(SimpleStringProperty accountId, SimpleStringProperty EMail, SimpleStringProperty land, SimpleStringProperty provincie,
-                   SimpleStringProperty plaats, SimpleStringProperty straat, SimpleStringProperty adres, SimpleStringProperty toevoeging, SimpleStringProperty postcode) {
+                   SimpleStringProperty plaats, SimpleStringProperty straat, SimpleStringProperty huisnummer, SimpleStringProperty toevoeging, SimpleStringProperty postcode) {
         this.AccountId = accountId;
         this.EMail = EMail;
         this.Land = land;
         this.Provincie = provincie;
         this.Plaats = plaats;
         this.Straat = straat;
-        this.Adres = adres;
+        this.Huisnummer = huisnummer;
         this.Toevoeging = toevoeging;
         this.Postcode = postcode;
     }
@@ -50,8 +50,8 @@ public class Account {
         this.Straat.set(straat);
     }
 
-    public void setAdres(String adres) {
-        this.Adres.set(adres);
+    public void setAdres(String huisnummer) {
+        this.Huisnummer.set(huisnummer);
     }
 
     public void setToevoeging(String toevoeging) {
@@ -110,12 +110,12 @@ public class Account {
         return Straat;
     }
 
-    public String getAdres() {
-        return Adres.get();
+    public String getHuisnummer() {
+        return Huisnummer.get();
     }
 
-    public SimpleStringProperty adresProperty() {
-        return Adres;
+    public SimpleStringProperty huisnummerProperty() {
+        return Huisnummer;
     }
 
     public String getToevoeging() {
