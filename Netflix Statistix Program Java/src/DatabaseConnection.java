@@ -1,4 +1,3 @@
-package DatabaseConnection;
 import java.sql.*;
 
 public class DatabaseConnection {
