@@ -38,11 +38,17 @@
       </Pane>
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: Black;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
-      <TableView layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
+      <TableView fx:id="accountTable" layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+         <columns>
+            <TableColumn fx:id="accountID" prefWidth="75.0" text="Account ID" />
+            <TableColumn fx:id="email" prefWidth="96.0" text="Email" />
+            <TableColumn fx:id="land" prefWidth="81.5999755859375" text="Land" />
+            <TableColumn fx:id="provincie" prefWidth="90.4000244140625" text="Provincie" />
+            <TableColumn fx:id="plaats" prefWidth="75.20004272460938" text="Plaats" />
+            <TableColumn fx:id="straat" prefWidth="65.60003662109375" text="Straat" />
+            <TableColumn fx:id="toevoeging" prefWidth="70.40008544921875" text="Toevoeging" />
+            <TableColumn fx:id="postcode" prefWidth="97.5999755859375" text="Postcode" />
+         </columns>
       </TableView>
    </children>
 </AnchorPane>
