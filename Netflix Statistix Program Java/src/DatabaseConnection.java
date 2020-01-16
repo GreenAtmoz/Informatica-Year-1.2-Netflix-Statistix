@@ -4,7 +4,7 @@ public class DatabaseConnection {
 
     public Connection Connect() {
         try {
-            String connectionUrl = "jdbc:sqlserver://LenovoIdeapadL340RubenvdRande;databaseName=Bibliotheek;user=netflix;password=#PhJbh2H;";
+            String connectionUrl = "jdbc:sqlserver://LenovoIdeapadL340RubenvdRande;databaseName=NetflixStatistixDatabase;user=netflix;password=#PhJbh2H;";
 
             // 'Importeer' de driver die je gedownload hebt.
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");

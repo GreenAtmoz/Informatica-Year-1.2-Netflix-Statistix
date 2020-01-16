@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="71.0" prefWidth="781.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane prefHeight="536.0" prefWidth="129.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -34,7 +34,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAccountLoad" layoutX="6.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadDataFromDataBase" text="Load Account Data" />
+            <Button fx:id="buttonAccountLoad" layoutX="6.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" text="Load Account Data" />
          </children>
       </Pane>
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />

@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private TableView<Account> table;
+    private TableView<Account> accountTable;
     @FXML
     private TableColumn<Account,String> columnAccountId;
     @FXML
@@ -56,14 +56,16 @@ public class Controller implements Initializable {
             getAccount = FXCollections.observableArrayList();
             ResultSet rs = conn.createStatement().executeQuery("SELECT * From Account");
             while (rs.next()) {
-                getAccount.add(new Account(rs.getString(0), rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+                getAccount.add(new Account(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9)));
             }
         } catch (SQLException ex) {
             System.err.println("Errror" + ex);
         }
 
-        columnAccountId.setCellValueFactory(new PropertyValueFactory<>("AccoundID"));
-        columnEmail.setCellValueFactory(new PropertyValueFactory<>("Email"));
+        columnAccountId.setCellValueFactory(new PropertyValueFactory<>("AccountId"));
+        columnAccountId.setOnEditCommit();
+
+        columnEmail.setCellValueFactory(new PropertyValueFactory<>("EMail"));
         columnLand.setCellValueFactory(new PropertyValueFactory<>("Land"));
         columnProvincie.setCellValueFactory(new PropertyValueFactory<>("Provincie"));
         columnPlaats.setCellValueFactory(new PropertyValueFactory<>("Plaats"));
@@ -71,5 +73,8 @@ public class Controller implements Initializable {
         columnHuisnummer.setCellValueFactory(new PropertyValueFactory<>("Straat"));
         columnToevoeging.setCellValueFactory(new PropertyValueFactory<>("Toevoeging"));
         columnPostcode.setCellValueFactory(new PropertyValueFactory<>("Postcode"));
+
+        accountTable.setItems(null);
+        accountTable.setItems(getAccount);
     }
 }

@@ -15,15 +15,15 @@ public class Account {
     private final StringProperty Postcode;
 
     public Account(String accountId, String EMail, String land, String provincie, String plaats, String straat, String huisnummer, String toevoeging, String postcode) {
-        AccountId = new SimpleStringProperty(accountId);
+        this.AccountId = new SimpleStringProperty(accountId);
         this.EMail = new SimpleStringProperty(EMail);
-        Land = new SimpleStringProperty(land);
-        Provincie = new SimpleStringProperty(provincie);
-        Plaats = new SimpleStringProperty(plaats);
-        Straat = new SimpleStringProperty(straat);
-        Huisnummer = new SimpleStringProperty(huisnummer);
-        Toevoeging = new SimpleStringProperty(toevoeging);
-        Postcode = new SimpleStringProperty(postcode);
+        this.Land = new SimpleStringProperty(land);
+        this.Provincie = new SimpleStringProperty(provincie);
+        this.Plaats = new SimpleStringProperty(plaats);
+        this.Straat = new SimpleStringProperty(straat);
+        this.Huisnummer = new SimpleStringProperty(huisnummer);
+        this.Toevoeging = new SimpleStringProperty(toevoeging);
+        this.Postcode = new SimpleStringProperty(postcode);
     }
 
     public String getAccountId() {
