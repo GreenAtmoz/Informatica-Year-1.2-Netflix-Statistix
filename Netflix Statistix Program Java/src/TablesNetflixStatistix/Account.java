@@ -1,136 +1,138 @@
 package TablesNetflixStatistix;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public class Account {
-    private final SimpleStringProperty AccountId;
-    private final SimpleStringProperty EMail;
-    private final SimpleStringProperty Land;
-    private final SimpleStringProperty Provincie;
-    private final SimpleStringProperty Plaats;
-    private final SimpleStringProperty Straat;
-    private final SimpleStringProperty Huisnummer;
-    private final SimpleStringProperty Toevoeging;
-    private final SimpleStringProperty Postcode;
+    private final StringProperty AccountId;
+    private final StringProperty EMail;
+    private final StringProperty Land;
+    private final StringProperty Provincie;
+    private final StringProperty Plaats;
+    private final StringProperty Straat;
+    private final StringProperty Huisnummer;
+    private final StringProperty Toevoeging;
+    private final StringProperty Postcode;
 
-    public Account(SimpleStringProperty accountId, SimpleStringProperty EMail, SimpleStringProperty land, SimpleStringProperty provincie,
-                   SimpleStringProperty plaats, SimpleStringProperty straat, SimpleStringProperty huisnummer, SimpleStringProperty toevoeging, SimpleStringProperty postcode) {
-        this.AccountId = accountId;
-        this.EMail = EMail;
-        this.Land = land;
-        this.Provincie = provincie;
-        this.Plaats = plaats;
-        this.Straat = straat;
-        this.Huisnummer = huisnummer;
-        this.Toevoeging = toevoeging;
-        this.Postcode = postcode;
-    }
-
-    public void setAccountId(String accountId) {
-        this.AccountId.set(accountId);
-    }
-
-    public void setEMail(String EMail) {
-        this.EMail.set(EMail);
-    }
-
-    public void setLand(String land) {
-        this.Land.set(land);
-    }
-
-    public void setProvincie(String provincie) {
-        this.Provincie.set(provincie);
-    }
-
-    public void setPlaats(String plaats) {
-        this.Plaats.set(plaats);
-    }
-
-    public void setStraat(String straat) {
-        this.Straat.set(straat);
-    }
-
-    public void setAdres(String huisnummer) {
-        this.Huisnummer.set(huisnummer);
-    }
-
-    public void setToevoeging(String toevoeging) {
-        this.Toevoeging.set(toevoeging);
-    }
-
-    public void setPostcode(String postcode) {
-        this.Postcode.set(postcode);
+    public Account(String accountId, String EMail, String land, String provincie, String plaats, String straat, String huisnummer, String toevoeging, String postcode) {
+        AccountId = new SimpleStringProperty(accountId);
+        this.EMail = new SimpleStringProperty(EMail);
+        Land = new SimpleStringProperty(land);
+        Provincie = new SimpleStringProperty(provincie);
+        Plaats = new SimpleStringProperty(plaats);
+        Straat = new SimpleStringProperty(straat);
+        Huisnummer = new SimpleStringProperty(huisnummer);
+        Toevoeging = new SimpleStringProperty(toevoeging);
+        Postcode = new SimpleStringProperty(postcode);
     }
 
     public String getAccountId() {
         return AccountId.get();
     }
 
-    public SimpleStringProperty accountIdProperty() {
+    public StringProperty accountIdProperty() {
         return AccountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.AccountId.set(accountId);
     }
 
     public String getEMail() {
         return EMail.get();
     }
 
-    public SimpleStringProperty EMailProperty() {
+    public StringProperty EMailProperty() {
         return EMail;
+    }
+
+    public void setEMail(String EMail) {
+        this.EMail.set(EMail);
     }
 
     public String getLand() {
         return Land.get();
     }
 
-    public SimpleStringProperty landProperty() {
+    public StringProperty landProperty() {
         return Land;
+    }
+
+    public void setLand(String land) {
+        this.Land.set(land);
     }
 
     public String getProvincie() {
         return Provincie.get();
     }
 
-    public SimpleStringProperty provincieProperty() {
+    public StringProperty provincieProperty() {
         return Provincie;
+    }
+
+    public void setProvincie(String provincie) {
+        this.Provincie.set(provincie);
     }
 
     public String getPlaats() {
         return Plaats.get();
     }
 
-    public SimpleStringProperty plaatsProperty() {
+    public StringProperty plaatsProperty() {
         return Plaats;
+    }
+
+    public void setPlaats(String plaats) {
+        this.Plaats.set(plaats);
     }
 
     public String getStraat() {
         return Straat.get();
     }
 
-    public SimpleStringProperty straatProperty() {
+    public StringProperty straatProperty() {
         return Straat;
+    }
+
+    public void setStraat(String straat) {
+        this.Straat.set(straat);
     }
 
     public String getHuisnummer() {
         return Huisnummer.get();
     }
 
-    public SimpleStringProperty huisnummerProperty() {
+    public StringProperty huisnummerProperty() {
         return Huisnummer;
+    }
+
+    public void setHuisnummer(String huisnummer) {
+        this.Huisnummer.set(huisnummer);
     }
 
     public String getToevoeging() {
         return Toevoeging.get();
     }
 
-    public SimpleStringProperty toevoegingProperty() {
+    public StringProperty toevoegingProperty() {
         return Toevoeging;
+    }
+
+    public void setToevoeging(String toevoeging) {
+        this.Toevoeging.set(toevoeging);
     }
 
     public String getPostcode() {
         return Postcode.get();
     }
 
-    public SimpleStringProperty postcodeProperty() {
+    public StringProperty postcodeProperty() {
         return Postcode;
     }
+
+    public void setPostcode(String postcode) {
+        this.Postcode.set(postcode);
+    }
 }
+
+

@@ -34,15 +34,23 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
+            <Button fx:id="buttonAccountLoad" layoutX="6.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadDataFromDataBase" text="Load Account Data" />
          </children>
       </Pane>
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: Black;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
-      <TableView layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
-        <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
-        </columns>
+      <TableView fx:id="accountTable" layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+         <columns>
+            <TableColumn fx:id="columnAccountId" prefWidth="75.0" text="Account ID" />
+            <TableColumn fx:id="columnEmail" prefWidth="96.0" text="Email" />
+            <TableColumn fx:id="columnLand" prefWidth="81.5999755859375" text="Land" />
+            <TableColumn fx:id="columnProvincie" prefWidth="90.4000244140625" text="Provincie" />
+            <TableColumn fx:id="columnPlaats" prefWidth="75.20004272460938" text="Plaats" />
+            <TableColumn fx:id="columnStraat" prefWidth="26.39996337890625" text="Straat" />
+            <TableColumn fx:id="columnHuisnummer" prefWidth="34.4000244140625" text="Huisnummer" />
+            <TableColumn fx:id="columnToevoeging" prefWidth="84.0" text="Toevoeging" />
+            <TableColumn fx:id="columnPostcode" prefWidth="83.199951171875" text="Postcode" />
+         </columns>
       </TableView>
    </children>
 </AnchorPane>
