@@ -9,15 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Pane prefHeight="71.0" prefWidth="781.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane prefHeight="536.0" prefWidth="129.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="70.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="71.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@netflixLogo.png" />
+                  <Image url="@HDnetflix_logo.png" />
                </image>
             </ImageView>
             <Button layoutX="4.0" layoutY="136.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Accounts" textFill="WHITE" wrapText="true">
@@ -25,34 +26,85 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="4.0" layoutY="193.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Series" textFill="WHITE" wrapText="true">
+            <Button layoutX="4.0" layoutY="260.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Series" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button layoutX="4.0" layoutY="253.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Film" textFill="WHITE" wrapText="true">
+            <Button layoutX="4.0" layoutY="322.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Film" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="buttonAccountLoad" layoutX="6.0" layoutY="487.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" text="Load Account Data" />
+            <Button layoutX="4.0" layoutY="201.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Profielen" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
-      <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />
-      <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: Black;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
-      <TableView fx:id="accountTable" layoutX="456.0" layoutY="117.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="456.0" AnchorPane.rightAnchor="-324.0" AnchorPane.topAnchor="117.0">
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999">
+         <children>
+            <Button fx:id="buttonAccountLoad" layoutX="1289.0" layoutY="11.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" text="Load Account Data" />
+            <Text fill="WHITE" layoutX="1142.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click to load table:" wrappingWidth="139.99999999999994">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
+      <TableView fx:id="accountTable" layoutX="397.0" layoutY="117.0" prefHeight="682.0" prefWidth="1145.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="397.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="117.0">
          <columns>
             <TableColumn fx:id="columnAccountId" prefWidth="75.0" text="Account ID" />
-            <TableColumn fx:id="columnEmail" prefWidth="96.0" text="Email" />
-            <TableColumn fx:id="columnLand" onEditCommit="#updateCellLand" prefWidth="81.5999755859375" text="Land" />
-            <TableColumn fx:id="columnProvincie" prefWidth="90.4000244140625" text="Provincie" />
-            <TableColumn fx:id="columnPlaats" prefWidth="75.20004272460938" text="Plaats" />
-            <TableColumn fx:id="columnStraat" prefWidth="26.39996337890625" text="Straat" />
-            <TableColumn fx:id="columnHuisnummer" prefWidth="34.4000244140625" text="Huisnummer" />
+            <TableColumn fx:id="columnEmail" prefWidth="194.4000244140625" text="Email" />
+            <TableColumn fx:id="columnLand" onEditCommit="#updateCellAccount" prefWidth="126.39996337890625" text="Land" />
+            <TableColumn fx:id="columnProvincie" prefWidth="146.4000244140625" text="Provincie" />
+            <TableColumn fx:id="columnPlaats" prefWidth="138.39990234375" text="Plaats" />
+            <TableColumn fx:id="columnStraat" prefWidth="145.60009765625" text="Straat" />
+            <TableColumn fx:id="columnHuisnummer" prefWidth="132.7999267578125" text="Huisnummer" />
             <TableColumn fx:id="columnToevoeging" prefWidth="84.0" text="Toevoeging" />
-            <TableColumn fx:id="columnPostcode" prefWidth="83.199951171875" text="Postcode" />
+            <TableColumn fx:id="columnPostcode" prefWidth="108.0" text="Postcode" />
          </columns>
       </TableView>
-      <TextField fx:id="newAccountId" layoutX="200.0" layoutY="170.0" />
+      <Pane layoutX="133.0" layoutY="648.0" prefHeight="152.0" prefWidth="260.0" style="-fx-background-color: #B0B0B0;" AnchorPane.bottomAnchor="0.0">
+         <children>
+            <TextField fx:id="deleteAccountIdTextField" layoutX="52.0" layoutY="51.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert AccountID" />
+            <Text layoutX="52.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Deleten:" wrappingWidth="157.99999999999994">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="52.0" layoutY="97.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="29.0" prefWidth="117.0" text="Delete Account">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Pane layoutX="250.0" layoutY="-533.0" prefHeight="688.0" prefWidth="14.0" style="-fx-background-color: #383838;" />
+         </children>
+      </Pane>
+      <Pane layoutX="125.0" layoutY="635.0" prefHeight="13.0" prefWidth="270.0" style="-fx-background-color: #383838;" />
+      <Pane layoutX="133.0" layoutY="117.0" prefHeight="518.0" prefWidth="250.0" style="-fx-background-color: #B0B0B0;">
+         <children>
+            <TextField fx:id="newEmailTextField" layoutX="51.0" layoutY="122.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Email" />
+            <TextField fx:id="newLandTextField" layoutX="51.0" layoutY="159.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Land" />
+            <TextField fx:id="newProvincieTextField" layoutX="51.0" layoutY="196.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Provincie" />
+            <TextField fx:id="newPlaatsTextField" layoutX="51.0" layoutY="233.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Plaats" />
+            <TextField fx:id="newStraatTextField" layoutX="51.0" layoutY="268.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Straat" />
+            <TextField fx:id="newHuisnummerTextField" layoutX="51.0" layoutY="306.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Huisnummer" />
+            <TextField fx:id="newToevoegingTextField" layoutX="51.0" layoutY="342.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Toevoeging" />
+            <TextField fx:id="newPostcodeTextField" layoutX="51.0" layoutY="378.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Postcode" />
+            <TextField fx:id="newAccountIdTextField" layoutX="51.0" layoutY="87.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert AccountID" />
+            <Button layoutX="49.0" layoutY="444.0" mnemonicParsing="false" onAction="#addNewAccount" prefHeight="39.0" prefWidth="140.0" text="Account Toevoegen">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Text layoutX="46.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieuw Account Toevoegen:" wrappingWidth="145.083984375">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

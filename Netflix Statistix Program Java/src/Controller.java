@@ -41,7 +41,26 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<Account,String> columnPostcode;
     @FXML
-    private TextField newAccountId;
+    private TextField newAccountIdTextField;
+    @FXML
+    private TextField newEmailTextField;
+    @FXML
+    private TextField newLandTextField;
+    @FXML
+    private TextField newProvincieTextField;
+    @FXML
+    private TextField newPlaatsTextField;
+    @FXML
+    private TextField newStraatTextField;
+    @FXML
+    private TextField newHuisnummerTextField;
+    @FXML
+    private TextField newToevoegingTextField;
+    @FXML
+    private TextField newPostcodeTextField;
+    @FXML
+    private TextField deleteAccountIdTextField;
+
 
     private ObservableList<Account> getAccount;
     private DatabaseConnection dc;
@@ -54,7 +73,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void loadAccountDataFromDataBase(javafx.event.ActionEvent actionEvent) {
+    public void loadAccountDataFromDataBase() {
         try {
             Connection conn = dc.Connect();
             getAccount = FXCollections.observableArrayList();
@@ -80,25 +99,44 @@ public class Controller implements Initializable {
         accountTable.setItems(getAccount);
     }
 
-    public void updateCellLand(TableColumn.CellEditEvent edittedCell) {
+    public void updateCellAccount(TableColumn.CellEditEvent edittedCell) {
         try {
             Connection conn = dc.Connect();
-            conn.createStatement().executeQuery("Update Account SET Land='" + edittedCell.getNewValue().toString()
+            conn.createStatement().executeQuery("Update Account SET " + edittedCell.getTableColumn().getText() + "='" + edittedCell.getNewValue().toString()
                     + "' WHERE AccountId='" + (accountTable.getSelectionModel().getSelectedItem()).getAccountId() +"'");
         } catch (SQLException ex) {
-            System.err.println("No result set returend and not needed! Data edit complete!" + ex);
+            System.err.println("No result set returned and not needed! Data edit complete!" + ex);
         }
     }
 
     @FXML
     public void addNewAccount() {
+        String newToevoeging = null;
+
+        if (!newToevoegingTextField.getText().isEmpty()) {
+            newToevoeging = "'" + newToevoegingTextField.getText() + "'";
+        }
+
         try {
             Connection conn = dc.Connect();
             conn.createStatement().executeQuery("INSERT INTO Account (AccountId, EMail, Land, Provincie, " +
-                    "Plaats, Straat, Huisnummer, Toevoeging, Postcode) VALUES ('"+ newAccountId.getText() +"', 'john.doe@gmail.com', 'Albanië', " +
-                    "'Lolland','Oisterwiijjjjjjjk' , 'Janusstraat', '45', null, '5082JI');");
+                    "Plaats, Straat, Huisnummer, Toevoeging, Postcode) VALUES ('" + newAccountIdTextField.getText() + "', '" + newEmailTextField.getText() + "', '" + newLandTextField.getText() + "', " +
+                    "'" + newProvincieTextField.getText() + "','" + newPlaatsTextField.getText() + "' , '" + newStraatTextField.getText() + "', '" + newHuisnummerTextField.getText() + "', " + newToevoeging + ", '" + newPostcodeTextField.getText() + "');");
         } catch (SQLException ex) {
-            System.err.println("No result set returend and not needed! Data edit complete!" + ex);
+            System.err.println("No result set returned and not needed! Data added complete!" + ex);
         }
+
+        loadAccountDataFromDataBase();
+    }
+
+    public void deleteAccount() {
+        try {
+            Connection conn = dc.Connect();
+            conn.createStatement().executeQuery("DELETE FROM Account WHERE AccountId='" + deleteAccountIdTextField.getText() + "';");
+        } catch (SQLException ex) {
+            System.err.println("No result set returned and not needed! Data delete complete!" + ex);
+        }
+
+        loadAccountDataFromDataBase();
     }
 }
