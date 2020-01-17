@@ -7,7 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.awt.event.ActionEvent;
 import java.net.URL;
@@ -39,7 +41,7 @@ public class Controller implements Initializable {
     @FXML
     private TableColumn<Account,String> columnPostcode;
     @FXML
-    private Button buttonAccountLoad;
+    private TextField newAccountId;
 
     private ObservableList<Account> getAccount;
     private DatabaseConnection dc;
@@ -47,6 +49,8 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dc = new DatabaseConnection();
+        accountTable.setEditable(true);
+        columnLand.setCellFactory(TextFieldTableCell.forTableColumn());
     }
 
     @FXML
@@ -63,8 +67,6 @@ public class Controller implements Initializable {
         }
 
         columnAccountId.setCellValueFactory(new PropertyValueFactory<>("AccountId"));
-        columnAccountId.setOnEditCommit();
-
         columnEmail.setCellValueFactory(new PropertyValueFactory<>("EMail"));
         columnLand.setCellValueFactory(new PropertyValueFactory<>("Land"));
         columnProvincie.setCellValueFactory(new PropertyValueFactory<>("Provincie"));
@@ -76,5 +78,27 @@ public class Controller implements Initializable {
 
         accountTable.setItems(null);
         accountTable.setItems(getAccount);
+    }
+
+    public void updateCellLand(TableColumn.CellEditEvent edittedCell) {
+        try {
+            Connection conn = dc.Connect();
+            conn.createStatement().executeQuery("Update Account SET Land='" + edittedCell.getNewValue().toString()
+                    + "' WHERE AccountId='" + (accountTable.getSelectionModel().getSelectedItem()).getAccountId() +"'");
+        } catch (SQLException ex) {
+            System.err.println("No result set returend and not needed! Data edit complete!" + ex);
+        }
+    }
+
+    @FXML
+    public void addNewAccount() {
+        try {
+            Connection conn = dc.Connect();
+            conn.createStatement().executeQuery("INSERT INTO Account (AccountId, EMail, Land, Provincie, " +
+                    "Plaats, Straat, Huisnummer, Toevoeging, Postcode) VALUES ('"+ newAccountId.getText() +"', 'john.doe@gmail.com', 'Albanië', " +
+                    "'Lolland','Oisterwiijjjjjjjk' , 'Janusstraat', '45', null, '5082JI');");
+        } catch (SQLException ex) {
+            System.err.println("No result set returend and not needed! Data edit complete!" + ex);
+        }
     }
 }

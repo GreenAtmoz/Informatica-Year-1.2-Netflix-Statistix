@@ -3,13 +3,14 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <Pane prefHeight="71.0" prefWidth="781.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Pane prefHeight="536.0" prefWidth="129.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -39,11 +40,11 @@
       </Pane>
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: Black;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999" />
       <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: Black;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
-      <TableView fx:id="accountTable" layoutX="132.0" layoutY="106.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="106.0">
+      <TableView fx:id="accountTable" layoutX="456.0" layoutY="117.0" prefHeight="431.0" prefWidth="649.0" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="456.0" AnchorPane.rightAnchor="-324.0" AnchorPane.topAnchor="117.0">
          <columns>
             <TableColumn fx:id="columnAccountId" prefWidth="75.0" text="Account ID" />
             <TableColumn fx:id="columnEmail" prefWidth="96.0" text="Email" />
-            <TableColumn fx:id="columnLand" prefWidth="81.5999755859375" text="Land" />
+            <TableColumn fx:id="columnLand" onEditCommit="#updateCellLand" prefWidth="81.5999755859375" text="Land" />
             <TableColumn fx:id="columnProvincie" prefWidth="90.4000244140625" text="Provincie" />
             <TableColumn fx:id="columnPlaats" prefWidth="75.20004272460938" text="Plaats" />
             <TableColumn fx:id="columnStraat" prefWidth="26.39996337890625" text="Straat" />
@@ -52,5 +53,6 @@
             <TableColumn fx:id="columnPostcode" prefWidth="83.199951171875" text="Postcode" />
          </columns>
       </TableView>
+      <TextField fx:id="newAccountId" layoutX="200.0" layoutY="170.0" />
    </children>
 </AnchorPane>
