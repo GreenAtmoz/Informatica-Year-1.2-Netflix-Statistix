@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Pane prefHeight="71.0" prefWidth="781.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Pane prefHeight="536.0" prefWidth="129.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="71.0" fitWidth="177.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@HDnetflix_logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="4.0" layoutY="136.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Accounts" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="353.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Series" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="418.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Film" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="201.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="122.0" style="-fx-background-color: #383838;" text="Profielen" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="4.0" layoutY="270.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="122.0" style="-fx-background-color: #515151;" text="profiel Kijkdata" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="47.0" prefWidth="656.0" style="-fx-background-color: #383838;" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="69.99999999999999">
+         <children>
+            <Button fx:id="buttonAccountLoad" layoutX="1289.0" layoutY="11.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" text="Load Account Data" />
+            <Text fill="WHITE" layoutX="1142.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click to load table:" wrappingWidth="139.99999999999994">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Text>
+            <Button fx:id="buttonAccountLoad1" layoutX="274.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" prefHeight="25.0" prefWidth="84.0" text="FilmData" />
+            <Button fx:id="buttonAccountLoad11" layoutX="383.0" layoutY="11.0" mnemonicParsing="false" onAction="#loadAccountDataFromDataBase" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: FF0000;" text="SerieData" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+         </children></Pane>
+      <Pane layoutX="125.0" layoutY="70.0" prefHeight="465.0" prefWidth="8.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.topAnchor="70.0" />
+      <TableView fx:id="accountTable" layoutX="397.0" layoutY="117.0" prefHeight="682.0" prefWidth="1145.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="397.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="117.0">
+         <columns>
+            <TableColumn fx:id="columnAccountId" prefWidth="128.0" text="ProfielNaam" />
+            <TableColumn fx:id="columnEmail" prefWidth="194.4000244140625" text="SerieTitel" />
+            <TableColumn fx:id="columnLand" onEditCommit="#updateCellAccount" prefWidth="166.39996337890625" text="Seizoen" />
+            <TableColumn prefWidth="173.60015869140625" text="AfleveringNummer" />
+            <TableColumn prefWidth="184.800048828125" text="AfleveringTitel" />
+            <TableColumn prefWidth="142.39990234375" text="Gebleven Bij" />
+         </columns>
+      </TableView>
+      <Pane layoutX="133.0" layoutY="465.0" prefHeight="336.0" prefWidth="260.0" style="-fx-background-color: #B0B0B0;" AnchorPane.bottomAnchor="-1.0">
+         <children>
+            <TextField fx:id="deleteAccountIdTextField" layoutX="48.0" layoutY="40.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert ProfielNaam" />
+            <Text layoutX="48.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ProfielSerie Deleten:" wrappingWidth="165.99999999999994">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="48.0" layoutY="122.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="29.0" prefWidth="140.0" text="Delete ProfielSerie">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Pane layoutX="250.0" layoutY="-457.0" prefHeight="793.0" prefWidth="15.0" style="-fx-background-color: #383838;" />
+            <TextField fx:id="deleteAccountIdTextField11" layoutX="48.0" layoutY="78.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert AfleveringNummer" />
+         </children>
+      </Pane>
+      <Pane layoutX="133.0" layoutY="117.0" prefHeight="336.0" prefWidth="250.0" style="-fx-background-color: #B0B0B0;">
+         <children>
+            <TextField fx:id="newEmailTextField" layoutX="50.0" layoutY="109.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert SerieTitel" />
+            <TextField fx:id="newLandTextField" layoutX="50.0" layoutY="143.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Seizoen" />
+            <TextField fx:id="newAccountIdTextField" layoutX="51.0" layoutY="76.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert ProfielNaam" />
+            <Button layoutX="46.0" layoutY="289.0" mnemonicParsing="false" onAction="#addNewAccount" prefHeight="39.0" prefWidth="166.0" text="ProfielSerie Toevoegen">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Text layoutX="50.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nieuw ProfielSerie Toevoegen:" wrappingWidth="157.9999999999999">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="newLandTextField1" layoutX="50.0" layoutY="180.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert AfleveringNummer" />
+            <TextField fx:id="newLandTextField11" layoutX="50.0" layoutY="252.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert Gebleven-Bij" />
+            <TextField fx:id="newLandTextField111" layoutX="50.0" layoutY="217.0" prefHeight="25.0" prefWidth="158.0" promptText="Insert AfleveringTitel" />
+         </children>
+      </Pane>
+      <Pane layoutX="128.0" layoutY="451.0" prefHeight="13.0" prefWidth="270.0" style="-fx-background-color: #383838;" />
+   </children>
+</AnchorPane>
